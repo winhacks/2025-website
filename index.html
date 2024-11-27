@@ -101,11 +101,7 @@
                     <h1 class="days-one-regular mb-2" style="font-size: 50px;">
                         <span class="greenText">WIN</span>HACKS 2025
                     </h1>
-                    <h3 class="days-one-regular greenText"> February 15-16</h3>
-                    <h3 class="azeret-mono" style="font-size: 18px; padding:10vh 0; max-width: 80vw; margin: 0 auto;">
-                        Create, compete, and conquer at the <span class="azeret-mono greenText">University of Windsor's</span> annual hackathon!
-                    </h3>
-
+                    <h3 class="days-one-regular greenText" style="margin-top:8vh;">February 15 - 16</h3>
                     <div>
                         <style>
                             #timer {
@@ -151,8 +147,7 @@
                                 }
 
                                 h3 {
-                                    font-size: 18px;
-                                    padding: 5vh 0;
+                                    font-size: 20px;
                                 }
 
                                 .time {
@@ -189,6 +184,31 @@
                             </div>
                         </div>
                     </div>
+                    <div style="margin-top: 2vh">
+                        <a href="https://maps.app.goo.gl/7TENNXranwseijqA6"
+                           target="_blank"
+                           class="hover-white"
+                           style="color: #e5e5e5; text-decoration: none;"
+                           onmouseover="this.style.color='white';" 
+                           onmouseout="this.style.color='#e5e5e5';"
+                        >
+                            <i class="fa fa-location-arrow" style="margin-right: 8px;"></i>
+                            Ed Lumley Centre for Engineering Innovation
+                        </a>
+                    </div>
+                    <p class="azeret-mono" style="padding-top: 8vh; max-width: 80vw; margin: 0 auto;">
+                        CREATE, COMPETE, and CONQUER at the <span class="azeret-mono greenText">University of Windsor</span>'s annual hackathon!
+                    </p>
+                    <a href="https://forms.gle/RHFgSupZLdRxZUJi7"
+                       target="_blank"
+                       class="btn btn-lg days-one-regular"
+                       style="background-color: #0de5a8; color: black; margin: 2vh 0; padding: 15px 30px; font-size: 20px; border-radius: 8px; text-decoration: none; display: inline-block;"
+                       onmouseover="this.style.backgroundColor='#18ffb3';"
+                       onmouseout="this.style.backgroundColor='#0de5a8';"
+                    >
+                       Apply Now
+                    </a>
+                    <p class="azeret-mono" style="font-size: 14px;">Application Deadline: Dec 31, 2024</p>
                 </div>
             </div>
         </div>
@@ -213,6 +233,12 @@
             var hours = Math.max(0, Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
             var minutes = Math.max(0, Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
             var seconds = Math.max(0, Math.floor((distance % (1000 * 60)) / 1000));
+
+            // pad with 0 if less than 10
+            days = days < 10 ? '0' + days : days;
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
 
             // Display the result in the elements
             document.getElementById('days').innerText = days;
@@ -242,7 +268,7 @@
                 <h2 style="color: #0de5a8;">About WinHacks</h2>
                 <p class="text-white">
                     Welcome to Windsor's annual hackathon that brings together innovators, creators, and problem-solvers
-                    from diverse backgrounds. Founded in 2019, WinHacks has been the beacon of collaboration,
+                    from diverse backgrounds. Founded in 2019, WinHacks has been a beacon of collaboration,
                     creativity, and technological advancement. <br>
                     <br>Join us for an electrifying experience filled with workshops, mentorship sessions, and an
                     opportunity to network with industry leaders. WinHacks welcomes all skill levels and backgrounds.
@@ -304,8 +330,8 @@
         <div class="row">
             <div class="col-lg-8 mx-auto" data-aos="fade-up">
                 <h2 style="color: #0de5a8;">Schedule</h2>
-                <p class = "text-white"><strong>February 15-16</strong></p>
-                <p class = "text-white">More details soon!<br></p>
+                <p class = "text-white"><strong>February 15 - 16</strong></p>
+                <p class = "text-white">Detailed schedule coming soon!<br></p>
             </div>
         </div>
     </div>
@@ -324,14 +350,14 @@
                 <div data-aos="fade-up" class="green_section">
                     <h3>What is a Hackathon?</h3>
                     <p class="text-left">To put it simply, hackathons combine the two words: hacking and marathon.
-                        Participants will get the chance to form teams of up to 1-4 members, and bring a project idea to
+                        Participants will get the chance to form teams of 1-4 members and bring a project idea to
                         life! However, they only have 36 hours to accomplish this.
                         Students will receive mentorship, learn about new job opportunities, and get some cool swag!<br>
                     </p>
                 </div>
                 <div data-aos="fade-up" class="gray_section text-white">
                     <h3 >Can I Work On My Hack Before the Event?</h3>
-                    <p class="text-left ">We follow the Major League Hacking guidelines, which prohibits students from
+                    <p class="text-left ">We follow the Major League Hacking guidelines, which prohibit students from
                         bringing and continuing a project that they have already worked on. Your final project should be
                         new and only built during the weekend of WinHacks.<br></p>
                 </div>
@@ -493,7 +519,7 @@
         <div class="intro" style="max-width: 700px;">
             <h2 class="text-center">Interested in Sponsoring?</h2>
             <p class="text-center">If you or your company is interested in being prominently featured among the Future
-                of Computer Science, contact us at&nbsp;<a style="color: #0de5a8;" href="mailto:sponsorship@winhacks.ca">sponsorship@winhacks.ca</a><br>
+                of Computer Science, contact us at&nbsp;<a style="color: #14c3a2;" href="mailto:sponsorship@winhacks.ca">sponsorship@winhacks.ca</a><br>
             </p>
             <!-- <p class="text-center" style="margin-top: 16px;"><a class="btn btn-primary btn-lg btn-default" role="button"
                                                                 href="sponsorship.pdf">Learn More Here</a><br></p> -->
@@ -515,10 +541,26 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-6 item text">
+                <div class="col-sm-6 col-md-3 item text">
                     <h3 style="color: #0de5a8;">WinHacks 2025</h3>
-                    <p>Register today for a chance to be a part of Windsor's major hackathon, and an experience to
+                    <p>Apply today for a chance to be a part of Windsor's major hackathon, and an experience to
                         remember!<br></p>
+                </div>
+                <div class="col-sm-6 col-md-3 item">
+                    <h3 style="color: #0de5a8;">Location</h3>
+                    <ul>
+                        <li>
+                            <a href="https://maps.app.goo.gl/7TENNXranwseijqA6" target="_blank">
+                                Ed Lumley Centre for Engineering Innovation
+                                <br/>
+                                Main entrance (northwest corner)
+                                <br/>
+                                2285 Wyandotte St W
+                                <br/>
+                                Windsor, ON N9B 1K3
+                            </a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="col-sm-6 col-md-3 item">
                     <h3 style="color: #0de5a8;">Useful Links</h3>
@@ -526,8 +568,8 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#schedule">Schedule</a></li>
                         <li><a href="#sponsors">Sponsors</a></li>
-                        <!-- <li><a href="http://discord.winhacks.ca">Join</a></li> -->
-                        <li><a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">MLH Code of Conduct</a></li>
+                        <li><a href="https://discord.winhacks.ca" target="_blank">Discord Server</a></li>
+                        <li><a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH Code of Conduct</a></li>
                         <li><a href="#"></a></li>
                     </ul>
                 </div>
@@ -537,19 +579,18 @@
                         <li><a href="mailto:support@winhacks.ca"><i class="fa fa-envelope"
                                                                     style="margin-right: 8px;"></i>support@winhacks.ca</a>
                         </li>
-                        <li></li>
                     </ul>
                 </div>
                 <div class="col item social" data-aos="fade" style="margin-top: 24px;">
-                    <a href="https://twitter.com/WinHacksCA"><i class="icon ion-social-twitter"></i></a>
-                    <a href="http://facebook.com/WinHacksCA"><i class="icon ion-social-facebook"></i></a>
-                    <a href="https://www.linkedin.com/company/winhacks"><i class="icon ion-social-linkedin"></i></a>
-                    <a href="https://www.youtube.com/channel/UCMph1_SzSomH2cUF7j_YqUA"><i
+                    <a href="https://twitter.com/WinHacksCA" target="_blank"><i class="icon ion-social-twitter"></i></a>
+                    <a href="http://facebook.com/WinHacksCA" target="_blank"><i class="icon ion-social-facebook"></i></a>
+                    <a href="https://www.linkedin.com/company/winhacks" target="_blank"><i class="icon ion-social-linkedin"></i></a>
+                    <a href="https://www.youtube.com/channel/UCMph1_SzSomH2cUF7j_YqUA" target="_blank"><i
                             class="icon ion-social-youtube"></i></a>
-                    <a href="https://instagram.com/winhacksca"><i class="fab fa-instagram"></i></a>
+                    <a href="https://instagram.com/winhacksca" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <p class="copyright">WinHacks 2025</p>
+            <p class="copyright">©WinHacks 2025</p>
         </div>
     </footer>
 </div>
