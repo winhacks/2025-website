@@ -342,11 +342,221 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto" data-aos="fade-up">
-                <h2 style="color: #0de5a8;">Schedule</h2>
-                <p class = "text-white"><strong>February 15 - 16</strong></p>
-                <p class = "text-white">Detailed schedule coming soon!<br></p>
+                <h1 style="color: #0de5a8;" class="mb-4">Schedule</h1>
             </div>
         </div>
+    </div>
+    <p class="text-secondary" style="margin-bottom:32px">Workshops and other events will be added soon!</p>
+    <div>
+        <style>
+            .test h4 {
+                padding: 0;
+                padding-bottom: 8px;
+                margin: 0;
+            }
+
+            .test p {
+                padding: 0;
+                margin: 0;
+            }
+
+            .test {
+                padding: 2rem;
+                color: white;
+                text-align: center;
+                background-color: black;
+            }
+
+            .test:hover {
+                background-color: #222222;
+                transition: 300ms;
+            }
+
+            .selected {
+                background-color: #0de5a8;
+                color: black;
+                transition: 500ms;
+            }
+
+            .selected:hover {
+                background-color: #0de5a8;
+                color: black;
+            }
+
+            .hidden {
+                display: none;
+            }
+
+            .day {
+                text-align: left !important;
+                padding: 2rem;
+                /* background-color: #222222; */
+                color: white;
+                border-radius: 20px;
+            }
+
+            .schedt {
+                padding: 30px;
+            }
+
+            .schedt p {
+                color: rgb(177, 177, 177);
+                padding-bottom: 0px;
+                margin-bottom: 0px;
+            }
+
+            .schedt h5 {
+                font-weight: 200;
+                color: white;
+            }
+
+            .days-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+
+        <div class="container">
+            <div class="row buttons">
+                <div id="b1" class="col-md-6 test selected" onclick="select(1)">
+                    <h2>Day 1</h2>
+                    <p>Saturday, Feb 15</p>
+                </div>
+                <div id="b2" class="col-md-6 test" onclick="select(2)">
+                    <h2>Day 2</h2>
+                    <p>Sunday, Feb 16</p>
+                </div>
+                <!-- <div id="b3" class="col-md-6 test" onclick="select(3)">
+                    <h4>Day 3</h4>
+                    <p>Sunday</p>
+                </div> -->
+            </div>
+            <br><br><br>
+            <div class="days-container">
+                <div class="day" id="day1">
+                    <div class="schedt">
+                        <p>9:00 AM</p>
+                        <h2>Registration Opens</h2>
+                        <p>Coffee provided, sponsor booths open</p>
+                        <p>See footer for location</p>
+                    </div>
+                    <div class="schedt">
+                        <p>10:00 AM</p>
+                        <h2>Opening Ceremonies</h2>
+                        <p>Challenges revealed, keynote speech by <a href="https://www.linkedin.com/in/jeremie-bornais/" target="_blank">Jeremie Bornais</a></p>
+                    </div>
+                    <div class="schedt">
+                        <p>12:00 PM</p>
+                        <h2>Lunch</h2>    
+                    </div>
+                    <div class="schedt">
+                        <p>6:00 PM</p>
+                        <h2>Dinner</h2>
+                    </div>
+                    <div class="schedt">
+                        <p>8:00 PM</p>
+                        <h2>Doors Close</h2>
+                        <p>No overnight accommodations, sorry!</p>
+                    </div>
+
+                    <!-- <div class="schedt">
+                        <p>2:30 PM - 3:30 PM</p>
+                        <h2>"Build Your First Full Stack App With Flask"</h2> <h6>🐍 Jeremie Bornais, Software Engineer @ RIIS</h6>
+                    </div>
+                    <div class="schedt">
+                        <p>4:30 PM - 5:30 PM</p>
+                        <h2>"Ethics and AI: An Interactive Debate"</h2> <h6>🤖 Natalie George, Norma Nizam, Raya Mazhar, Faraan Rashid, Odette Debate</h6>
+                    </div>
+                    <div class="schedt">
+                        <p>6:00 PM</p>
+                        <h2>Dinner</h2>
+                    </div>
+                    <div class="schedt">
+                        <p>8:00 PM</p>
+                        <h2>Doors close</h2>
+                    </div> -->
+                </div>
+
+                <div class="day hidden" id="day2">
+                    <div class="schedt">
+                        <p>8:00 AM</p>
+                        <h2>Doors Open</h2>
+                        <p>Breakfast provided</p>
+                    </div>
+                    <div class="schedt">
+                        <p>12:00 PM</p>
+                        <h2>Lunch</h2>
+                    </div>
+                    <div class="schedt">
+                        <p>1:00 PM</p>
+                        <h2>Submission Deadline</h2>
+                    </div>
+                    <div class="schedt">
+                        <p>4:00 PM</p>
+                        <h2>Closing Ceremonies</h2>
+                    </div>
+                </div>
+
+                <div class="day hidden" id="day3">
+                    TBD
+                    <!--          <div class="schedt">-->
+                    <!--            <p>9:00 AM</p>-->
+                    <!--            <h2>Day 3 Opening Stream</h2>-->
+                    <!--          </div>-->
+                    <!--          -->
+                    <!--          <div class="schedt">-->
+                    <!--              <p>9:30 AM</p>-->
+                    <!--              <h2>Soft Submission Deadline</h2>-->
+                    <!--          </div>-->
+                    <!--          -->
+                    <!--          <div class="schedt">-->
+                    <!--            <p>10:30 AM</p>-->
+                    <!--            <h2>Hard Submission Deadline</h2>-->
+                    <!--          </div>-->
+
+                    <!--          <div class="schedt">-->
+                    <!--            <p>11:30 AM</p>-->
+                    <!--            <h2>Minecraft Server Exploration and Build Showcase</h2>-->
+                    <!--          </div>-->
+                    <!--          -->
+                    <!--          <div class="schedt">-->
+                    <!--            <p>3:00 PM</p>-->
+                    <!--            <h2>Awards and Closing Ceremonies</h2>-->
+                    <!--          </div>-->
+
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var $id = function (id) {
+                return document.getElementById(id)
+            };
+
+            function select(id) {
+                let b1 = $id('b1');
+                let b2 = $id('b2');
+                let day1 = $id('day1');
+                let day2 = $id('day2');
+                b1.classList.remove('selected');
+                b2.classList.remove('selected');
+                day1.classList.add('hidden');
+                day2.classList.add('hidden');
+                switch (id) {
+                    case 1:
+                        b1.classList.add('selected');
+                        day1.classList.remove('hidden');
+                        break;
+                    case 2:
+                        b2.classList.add('selected');
+                        day2.classList.remove('hidden');
+                        break;
+                }
+            }
+        </script>
+
     </div>
 </section>
 
