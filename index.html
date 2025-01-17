@@ -409,6 +409,13 @@
                 font-weight: 200;
                 color: white;
             }
+
+            .days-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
         </style>
 
         <div class="container">
@@ -427,97 +434,99 @@
                 </div> -->
             </div>
             <br><br><br>
-            <div class="day" id="day1">
-                <div class="schedt">
-                    <p>9:00 AM</p>
-                    <h2>Registration Opens</h2>
-                    <p>Coffee provided, sponsor booths open</p>
-                    <p>See footer for location</p>
-                </div>
-                <div class="schedt">
-                    <p>10:00 AM</p>
-                    <h2>Opening Ceremonies</h2>
-                    <p>Challenges revealed, keynote speech by <a href="https://www.linkedin.com/in/jeremie-bornais/" target="_blank">Jeremie Bornais</a></p>
-                </div>
-                <div class="schedt">
-                    <p>12:00 PM</p>
-                    <h2>Lunch</h2>    
-                </div>
-                <div class="schedt">
-                    <p>6:00 PM</p>
-                    <h2>Dinner</h2>
-                </div>
-                <div class="schedt">
-                    <p>8:00 PM</p>
-                    <h2>Doors Close</h2>
-                    <p>No overnight accommodations, sorry!</p>
+            <div class="days-container">
+                <div class="day" id="day1">
+                    <div class="schedt">
+                        <p>9:00 AM</p>
+                        <h2>Registration Opens</h2>
+                        <p>Coffee provided, sponsor booths open</p>
+                        <p>See footer for location</p>
+                    </div>
+                    <div class="schedt">
+                        <p>10:00 AM</p>
+                        <h2>Opening Ceremonies</h2>
+                        <p>Challenges revealed, keynote speech by <a href="https://www.linkedin.com/in/jeremie-bornais/" target="_blank">Jeremie Bornais</a></p>
+                    </div>
+                    <div class="schedt">
+                        <p>12:00 PM</p>
+                        <h2>Lunch</h2>    
+                    </div>
+                    <div class="schedt">
+                        <p>6:00 PM</p>
+                        <h2>Dinner</h2>
+                    </div>
+                    <div class="schedt">
+                        <p>8:00 PM</p>
+                        <h2>Doors Close</h2>
+                        <p>No overnight accommodations, sorry!</p>
+                    </div>
+
+                    <!-- <div class="schedt">
+                        <p>2:30 PM - 3:30 PM</p>
+                        <h2>"Build Your First Full Stack App With Flask"</h2> <h6>🐍 Jeremie Bornais, Software Engineer @ RIIS</h6>
+                    </div>
+                    <div class="schedt">
+                        <p>4:30 PM - 5:30 PM</p>
+                        <h2>"Ethics and AI: An Interactive Debate"</h2> <h6>🤖 Natalie George, Norma Nizam, Raya Mazhar, Faraan Rashid, Odette Debate</h6>
+                    </div>
+                    <div class="schedt">
+                        <p>6:00 PM</p>
+                        <h2>Dinner</h2>
+                    </div>
+                    <div class="schedt">
+                        <p>8:00 PM</p>
+                        <h2>Doors close</h2>
+                    </div> -->
                 </div>
 
-                <!-- <div class="schedt">
-                    <p>2:30 PM - 3:30 PM</p>
-                    <h2>"Build Your First Full Stack App With Flask"</h2> <h6>🐍 Jeremie Bornais, Software Engineer @ RIIS</h6>
+                <div class="day hidden" id="day2">
+                    <div class="schedt">
+                        <p>8:00 AM</p>
+                        <h2>Doors Open</h2>
+                        <p>Breakfast provided</p>
+                    </div>
+                    <div class="schedt">
+                        <p>12:00 PM</p>
+                        <h2>Lunch</h2>
+                    </div>
+                    <div class="schedt">
+                        <p>1:00 PM</p>
+                        <h2>Submission Deadline</h2>
+                    </div>
+                    <div class="schedt">
+                        <p>4:00 PM</p>
+                        <h2>Closing Ceremonies</h2>
+                    </div>
                 </div>
-                <div class="schedt">
-                    <p>4:30 PM - 5:30 PM</p>
-                    <h2>"Ethics and AI: An Interactive Debate"</h2> <h6>🤖 Natalie George, Norma Nizam, Raya Mazhar, Faraan Rashid, Odette Debate</h6>
-                </div>
-                <div class="schedt">
-                    <p>6:00 PM</p>
-                    <h2>Dinner</h2>
-                </div>
-                <div class="schedt">
-                    <p>8:00 PM</p>
-                    <h2>Doors close</h2>
-                </div> -->
-            </div>
 
-            <div class="day hidden" id="day2">
-                <div class="schedt">
-                    <p>8:00 AM</p>
-                    <h2>Doors Open</h2>
-                    <p>Breakfast provided</p>
-                </div>
-                <div class="schedt">
-                    <p>12:00 PM</p>
-                    <h2>Lunch</h2>
-                </div>
-                <div class="schedt">
-                    <p>1:00 PM</p>
-                    <h2>Submission Deadline</h2>
-                </div>
-                <div class="schedt">
-                    <p>4:00 PM</p>
-                    <h2>Closing Ceremonies</h2>
-                </div>
-            </div>
+                <div class="day hidden" id="day3">
+                    TBD
+                    <!--          <div class="schedt">-->
+                    <!--            <p>9:00 AM</p>-->
+                    <!--            <h2>Day 3 Opening Stream</h2>-->
+                    <!--          </div>-->
+                    <!--          -->
+                    <!--          <div class="schedt">-->
+                    <!--              <p>9:30 AM</p>-->
+                    <!--              <h2>Soft Submission Deadline</h2>-->
+                    <!--          </div>-->
+                    <!--          -->
+                    <!--          <div class="schedt">-->
+                    <!--            <p>10:30 AM</p>-->
+                    <!--            <h2>Hard Submission Deadline</h2>-->
+                    <!--          </div>-->
 
-            <div class="day hidden" id="day3">
-                TBD
-                <!--          <div class="schedt">-->
-                <!--            <p>9:00 AM</p>-->
-                <!--            <h2>Day 3 Opening Stream</h2>-->
-                <!--          </div>-->
-                <!--          -->
-                <!--          <div class="schedt">-->
-                <!--              <p>9:30 AM</p>-->
-                <!--              <h2>Soft Submission Deadline</h2>-->
-                <!--          </div>-->
-                <!--          -->
-                <!--          <div class="schedt">-->
-                <!--            <p>10:30 AM</p>-->
-                <!--            <h2>Hard Submission Deadline</h2>-->
-                <!--          </div>-->
+                    <!--          <div class="schedt">-->
+                    <!--            <p>11:30 AM</p>-->
+                    <!--            <h2>Minecraft Server Exploration and Build Showcase</h2>-->
+                    <!--          </div>-->
+                    <!--          -->
+                    <!--          <div class="schedt">-->
+                    <!--            <p>3:00 PM</p>-->
+                    <!--            <h2>Awards and Closing Ceremonies</h2>-->
+                    <!--          </div>-->
 
-                <!--          <div class="schedt">-->
-                <!--            <p>11:30 AM</p>-->
-                <!--            <h2>Minecraft Server Exploration and Build Showcase</h2>-->
-                <!--          </div>-->
-                <!--          -->
-                <!--          <div class="schedt">-->
-                <!--            <p>3:00 PM</p>-->
-                <!--            <h2>Awards and Closing Ceremonies</h2>-->
-                <!--          </div>-->
-
+                </div>
             </div>
         </div>
 
