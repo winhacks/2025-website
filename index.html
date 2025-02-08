@@ -30,7 +30,9 @@
     <link rel="stylesheet" href="assets/css/Lightbox-Gallery.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed&family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Days+One&family=Koulen&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Asap+Condensed&family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Days+One&family=Koulen&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <title>WinHacks 2025</title>
     <style>
         @font-face {
@@ -38,14 +40,20 @@
             src: url(HKGrotesk-Regular.ttf);
         }
 
-        p, h1, h2, h3, h4, a {
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        a {
             /*font-family: hk !important;*/
         }
 
-        .team-container > div{
+        .team-container>div {
             text-align: center;
         }
-        .team-container > div > img {
+
+        .team-container>div>img {
             width: 80%;
         }
 
@@ -54,162 +62,377 @@
                 grid-template-columns: 1fr !important;
             }
         }
+
+        .schedt {
+            padding: 10px 15px 10px 50px;
+            position: relative;
+            border-left: 2px solid #333;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .schedt::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 24px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #333;
+            transition: all 0.3s ease;
+        }
+
+        .schedt.meal::before {
+            background: #ff9800;
+        }
+
+        .schedt.workshop::before {
+            background: #0de5a8;
+        }
+
+        .schedt.ceremony::before {
+            background: #e91e63;
+        }
+
+        .schedt:hover::before {
+            background: #0de5a8;
+            transform: scale(1.5);
+        }
+
+        .day {
+            padding: 1rem;
+            padding-left: 3rem;
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .schedt p {
+            color: rgb(177, 177, 177);
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            font-size: 14px;
+        }
+
+        .schedt h2 {
+            font-size: 20px;
+            margin-bottom: 2px;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        .days-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .test {
+            padding: 2rem;
+            color: white;
+            text-align: center;
+            background-color: black;
+        }
+
+        .test:hover {
+            background-color: #222222;
+            transition: 300ms;
+        }
+
+        .selected {
+            background-color: #0de5a8;
+            color: black;
+            transition: 500ms;
+        }
+
+        .selected:hover {
+            background-color: #0de5a8;
+            color: black;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .days-container {
+                position: relative;
+            }
+
+            .days-container::before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background: #333;
+                transform: translateX(-50%);
+            }
+
+            .schedt {
+                width: 50%;
+                padding: 8px 25px;
+                position: relative;
+                margin: 5px 0;
+                border: none;
+                min-height: 70px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .schedt::before {
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: #333;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 1;
+                transition: transform 0.3s ease;
+                transform-origin: center center;
+            }
+
+            .schedt:nth-child(odd) {
+                margin-left: 0;
+                padding-right: 50px;
+                text-align: right;
+            }
+
+            .schedt:nth-child(even) {
+                margin-left: 50%;
+                padding-left: 50px;
+                text-align: left;
+            }
+
+            .schedt:nth-child(odd)::before {
+                left: calc(100% - 5px);
+            }
+
+            .schedt:nth-child(even)::before {
+                left: -5px;
+            }
+
+            .schedt.meal::before {
+                background: #ff9800;
+            }
+
+            .schedt.workshop::before {
+                background: #0de5a8;
+            }
+
+            .schedt.ceremony::before {
+                background: #e91e63;
+            }
+
+            .schedt:hover::before {
+                transform: translateY(-50%) scale(1.5);
+            }
+
+            .day {
+                padding: 0.5rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .schedt {
+                padding: 10px 15px 10px 50px;
+                position: relative;
+                border-left: 2px solid #333;
+                width: 100%;
+                max-width: 800px;
+            }
+
+            .schedt::before {
+                content: '';
+                position: absolute;
+                left: -6px;
+                top: 24px;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: #333;
+            }
+
+            .schedt::before {
+                transform-origin: center center;
+                transition: transform 0.3s ease;
+            }
+
+            .schedt:hover::before {
+                transform: scale(1.5);
+            }
+        }
     </style>
 
 </head>
-<body id="page-top">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<nav class="navbar navbar-light navbar-expand-xl fixed-top pl-5 px-3" id="mainNav">
-    <a class="navbar-brand d-flex align-items-center m-0 w-25" href="#">
-        <img src="assets/img/logo_dg.png" alt="Logo" class="d-inline-block align-text-top" width="65">
-        <div class="pl-4 text-white">
-            <h3 class="days-one-regular m-0 py-0"><span class="greenText">WIN</span>HACKS 2025</h3>
-            <p class="azeret-mono m-0 text-center" style="font-size: 15px">create. compete. conquer.</p>
-        </div>
-    </a>
-    <button class="navbar-toggler navbar-toggler-right w-10 h-10" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fa fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul  class="nav navbar-nav ml-auto">
-            <li class="nav-item ">
-                <a class="nav-link fw-bold fs-5 mx-3 days-one-regular" aria-current="page" href="#"onMouseOver="this.style.color='#0DE5A8FF'" onMouseOut="this.style.color='#ffffff'">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link fw-bold fs-5 mx-3 days-one-regular" aria-current="page" href="#about"onMouseOver="this.style.color='#0DE5A8FF'" onMouseOut="this.style.color='#ffffff'">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link fw-bold fs-5 mx-3 days-one-regular" aria-current="page" href="#schedule"onMouseOver="this.style.color='#0DE5A8FF'" onMouseOut="this.style.color='#ffffff'">Schedule</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link fw-bold fs-5 mx-3 days-one-regular" aria-current="page" href="#faq"onMouseOver="this.style.color='#0DE5A8FF'" onMouseOut="this.style.color='#ffffff'">FAQ</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link fw-bold fs-5 mx-3 days-one-regular" href="#sponsors"onMouseOver="this.style.color='#0DE5A8FF'" onMouseOut="this.style.color='#ffffff'">Sponsors</a>
-            </li>
-            <!-- Example for Join Us button (uncomment if needed) -->
-            <!-- <li class="nav-item">
+<body id="page-top">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <nav class="navbar navbar-light navbar-expand-xl fixed-top pl-5 px-3" id="mainNav">
+        <a class="navbar-brand d-flex align-items-center m-0 w-25" href="#">
+            <img src="assets/img/logo_dg.png" alt="Logo" class="d-inline-block align-text-top" width="65">
+            <div class="pl-4 text-white">
+                <h3 class="days-one-regular m-0 py-0"><span class="greenText">WIN</span>HACKS 2025</h3>
+                <p class="azeret-mono m-0 text-center" style="font-size: 15px">create. compete. conquer.</p>
+            </div>
+        </a>
+        <button class="navbar-toggler navbar-toggler-right w-10 h-10" type="button" data-toggle="collapse"
+            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item ">
+                    <a class="nav-link fw-bold fs-5 mx-3 days-one-regular" aria-current="page" href="#"
+                        onMouseOver="this.style.color='#0DE5A8FF'" onMouseOut="this.style.color='#ffffff'">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold fs-5 mx-3 days-one-regular" aria-current="page" href="#about"
+                        onMouseOver="this.style.color='#0DE5A8FF'" onMouseOut="this.style.color='#ffffff'">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold fs-5 mx-3 days-one-regular" aria-current="page" href="#schedule"
+                        onMouseOver="this.style.color='#0DE5A8FF'" onMouseOut="this.style.color='#ffffff'">Schedule</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold fs-5 mx-3 days-one-regular" aria-current="page" href="#faq"
+                        onMouseOver="this.style.color='#0DE5A8FF'" onMouseOut="this.style.color='#ffffff'">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold fs-5 mx-3 days-one-regular" href="#sponsors"
+                        onMouseOver="this.style.color='#0DE5A8FF'" onMouseOut="this.style.color='#ffffff'">Sponsors</a>
+                </li>
+                <!-- Example for Join Us button (uncomment if needed) -->
+                <!-- <li class="nav-item">
                 <a class="nav-green days-one-regular nav-link fs-5 mx-3 gradientHorizontalButton text-white px-5 py-2" href="#">Join Us</a>
             </li> -->
-        </ul>
-    </div>
-</nav>
+            </ul>
+        </div>
+    </nav>
 
 
-<header class="masthead" style="background-image: url(&quot;assets/img/wp_dark.png&quot;);">
-    <div class="container">
-        <div class="row justify-content-center align-items-center" style="height: 100vh;">
-            <!-- Adjust the following col classes as needed -->
-            <div class="col-lg-6 col-md-8 col-sm-12 text-center">
-                <div class="text-white" style="padding-top: 12vh;">
-                    <h1 class="days-one-regular mb-0" style="font-size: 40px;">Welcome to</h1>
-                    <h1 class="days-one-regular mb-2" style="font-size: 50px;">
-                        <span class="greenText">WIN</span>HACKS 2025
-                    </h1>
-                    <h3 class="days-one-regular greenText" style="margin-top:8vh;">February 15 - 16</h3>
-                    <div>
-                        <style>
-                            a {
-                                color: #0de5a8;
-                            }
-                            
-                            #timer {
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                margin-top: 20px;
-                            }
-
-                            .time {
-                                color: white;
-                                text-align: center;
-                                width: 70px;
-                                margin-right: 15px;
-                            }
-
-                            .count {
-                                height: 80px;
-                                text-align: center;
-                                width: 70px;
-                                margin-right: 15px;
-                                background: rgba(41, 107, 90, 0.8);
-                                border-radius: 8px;
-                                padding: 15px 30px;
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                                justify-content: center;
-                            }
-
-                            .time small {
-                                font-size: 12px;
-                                text-transform: uppercase;
-                                color: #e5e5e5;
-                                margin-top: 5px;
-                                background: none;
-                            }
-
-                            /* Mobile responsiveness */
-                            @media (max-width: 576px) {
-                                h1 {
-                                    font-size: 32px;
+    <header class="masthead" style="background-image: url(&quot;assets/img/wp_dark.png&quot;);">
+        <div class="container">
+            <div class="row justify-content-center align-items-center" style="height: 100vh;">
+                <!-- Adjust the following col classes as needed -->
+                <div class="col-lg-6 col-md-8 col-sm-12 text-center">
+                    <div class="text-white" style="padding-top: 12vh;">
+                        <h1 class="days-one-regular mb-0" style="font-size: 40px;">Welcome to</h1>
+                        <h1 class="days-one-regular mb-2" style="font-size: 50px;">
+                            <span class="greenText">WIN</span>HACKS 2025
+                        </h1>
+                        <h3 class="days-one-regular greenText" style="margin-top:8vh;">February 15 - 16</h3>
+                        <div>
+                            <style>
+                                a {
+                                    color: #0de5a8;
                                 }
 
-                                h3 {
-                                    font-size: 20px;
+                                #timer {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    margin-top: 20px;
                                 }
 
                                 .time {
-                                    width: 60px;
-                                    margin-right: 10px;
+                                    color: white;
+                                    text-align: center;
+                                    width: 70px;
+                                    margin-right: 15px;
                                 }
 
                                 .count {
-                                    height: 70px;
-                                    width: 60px;
-                                    padding: 10px 20px;
+                                    height: 80px;
+                                    text-align: center;
+                                    width: 70px;
+                                    margin-right: 15px;
+                                    background: rgba(41, 107, 90, 0.8);
+                                    border-radius: 8px;
+                                    padding: 15px 30px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: center;
                                 }
-                            }
-                        </style>
 
-                        <div id="timer">
-                            <div class="time">
-                                <h1 class="count" id="days">0</h1>
-                                <small>DAYS</small>
-                            </div>
+                                .time small {
+                                    font-size: 12px;
+                                    text-transform: uppercase;
+                                    color: #e5e5e5;
+                                    margin-top: 5px;
+                                    background: none;
+                                }
 
-                            <div class="time">
-                                <h1 class="count" id="hours">0</h1>
-                                <small>HOURS</small>
-                            </div>
+                                /* Mobile responsiveness */
+                                @media (max-width: 576px) {
+                                    h1 {
+                                        font-size: 32px;
+                                    }
 
-                            <div class="time">
-                                <h1 class="count" id="minutes">0</h1>
-                                <small>MINUTES</small>
-                            </div>
-                            <div class="time">
-                                <h1 class="count" id="seconds">0</h1>
-                                <small>SECONDS</small>
+                                    h3 {
+                                        font-size: 20px;
+                                    }
+
+                                    .time {
+                                        width: 60px;
+                                        margin-right: 10px;
+                                    }
+
+                                    .count {
+                                        height: 70px;
+                                        width: 60px;
+                                        padding: 10px 20px;
+                                    }
+                                }
+                            </style>
+
+                            <div id="timer">
+                                <div class="time">
+                                    <h1 class="count" id="days">0</h1>
+                                    <small>DAYS</small>
+                                </div>
+
+                                <div class="time">
+                                    <h1 class="count" id="hours">0</h1>
+                                    <small>HOURS</small>
+                                </div>
+
+                                <div class="time">
+                                    <h1 class="count" id="minutes">0</h1>
+                                    <small>MINUTES</small>
+                                </div>
+                                <div class="time">
+                                    <h1 class="count" id="seconds">0</h1>
+                                    <small>SECONDS</small>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div style="margin-top: 2vh">
-                        <a href="https://maps.app.goo.gl/7TENNXranwseijqA6"
-                           target="_blank"
-                           class="hover-white"
-                           style="color: #e5e5e5; text-decoration: none;"
-                           onmouseover="this.style.color='white';" 
-                           onmouseout="this.style.color='#e5e5e5';"
-                        >
-                            <i class="fa fa-location-arrow" style="margin-right: 8px;"></i>
-                            Ed Lumley Centre for Engineering Innovation
-                        </a>
-                    </div>
-                    <p class="azeret-mono" style="padding-top: 8vh; max-width: 80vw; margin: 0 auto;">
-                        CREATE, COMPETE, and CONQUER at the <span class="azeret-mono greenText">University of Windsor</span>'s annual hackathon!
-                    </p>
-                    <!--
+                        <div style="margin-top: 2vh">
+                            <a href="https://maps.app.goo.gl/7TENNXranwseijqA6" target="_blank" class="hover-white"
+                                style="color: #e5e5e5; text-decoration: none;" onmouseover="this.style.color='white';"
+                                onmouseout="this.style.color='#e5e5e5';">
+                                <i class="fa fa-location-arrow" style="margin-right: 8px;"></i>
+                                Ed Lumley Centre for Engineering Innovation
+                            </a>
+                        </div>
+                        <p class="azeret-mono" style="padding-top: 8vh; max-width: 80vw; margin: 0 auto;">
+                            CREATE, COMPETE, and CONQUER at the <span class="azeret-mono greenText">University of
+                                Windsor</span>'s annual hackathon!
+                        </p>
+                        <!--
                     <a href="https://forms.gle/RHFgSupZLdRxZUJi7"
                        target="_blank"
                        class="btn btn-lg days-one-regular"
@@ -220,97 +443,96 @@
                        Apply Now
                     </a>
                     -->
-                    <p class="azeret-mono" style="font-size: 14px;margin-top:64px">Applications are now closed, and decisions have been sent out to the emails used when applying.</p>
+                        <p class="azeret-mono" style="font-size: 14px;margin-top:64px">Applications are now closed, and
+                            decisions have been sent out to the emails used when applying.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <script>
-        // Set the date we're counting down to
-        var countDownDate = new Date("Feb 15, 2025 09:00:00").getTime();
+        <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("Feb 15, 2025 09:00:00").getTime();
 
-        // Update the count down every 1 second
-        var x = setInterval(function () {
+            // Update the count down every 1 second
+            var x = setInterval(function () {
 
-            // Get today's date and time
-            var now = new Date().getTime();
+                // Get today's date and time
+                var now = new Date().getTime();
 
-            // Find the distance between now and the count down date
-            var distance = countDownDate - now;
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
 
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24)));
-            var hours = Math.max(0, Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-            var minutes = Math.max(0, Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
-            var seconds = Math.max(0, Math.floor((distance % (1000 * 60)) / 1000));
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24)));
+                var hours = Math.max(0, Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+                var minutes = Math.max(0, Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+                var seconds = Math.max(0, Math.floor((distance % (1000 * 60)) / 1000));
 
-            // pad with 0 if less than 10
-            days = days < 10 ? '0' + days : days;
-            hours = hours < 10 ? '0' + hours : hours;
-            minutes = minutes < 10 ? '0' + minutes : minutes;
-            seconds = seconds < 10 ? '0' + seconds : seconds;
+                // pad with 0 if less than 10
+                days = days < 10 ? '0' + days : days;
+                hours = hours < 10 ? '0' + hours : hours;
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
 
-            // Display the result in the elements
-            document.getElementById('days').innerText = days;
-            document.getElementById('hours').innerText = hours;
-            document.getElementById('minutes').innerText = minutes;
-            document.getElementById('seconds').innerText = seconds;
+                // Display the result in the elements
+                document.getElementById('days').innerText = days;
+                document.getElementById('hours').innerText = hours;
+                document.getElementById('minutes').innerText = minutes;
+                document.getElementById('seconds').innerText = seconds;
 
-            // If the count down is finished, write some text
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("demo").innerHTML = "EXPIRED";
-            }
-        }, 1000);
-    </script>
-</header>
+                // If the count down is finished, write some text
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+        </script>
+    </header>
 
 
-<section id="about" class="content-section text-center bg-black">
-    <div class="row align-items-center" style="margin-right: 10%;margin-left: 10%;">
-        <div class="col-lg-5 mx-auto" style="margin-top: 12px;margin-bottom: 12px;"><img data-aos="fade-up"
-                                                                                         src="assets/img/hackers.jpg"
-                                                                                         width="100%"
-                                                                                         style="border-radius: 50px;">
-        </div>
-        <div class="col-lg-7 mx-auto" style="padding-right: 0px;">
-            <div data-aos="fade-up" style="padding: 25px 45px; background-color: #222; border-radius: 50px;">
-                <h2 style="color: #0de5a8;">About WinHacks</h2>
-                <p class="text-white">
-                    Welcome to Windsor's annual hackathon that brings together innovators, creators, and problem-solvers
-                    from diverse backgrounds. Founded in 2019, WinHacks has been a beacon of collaboration,
-                    creativity, and technological advancement. <br>
-                    <br>Join us for an electrifying experience filled with workshops, mentorship sessions, and an
-                    opportunity to network with industry leaders. WinHacks welcomes all skill levels and backgrounds.
-                    <br>
-                    <br>Mark your calendars for a transformative weekend of innovation, camaraderie, and a chance to
-                    redefine what's possible at WinHacks 2025!
-                </p>
-                <!--
+    <section id="about" class="content-section text-center bg-black">
+        <div class="row align-items-center" style="margin-right: 10%;margin-left: 10%;">
+            <div class="col-lg-5 mx-auto" style="margin-top: 12px;margin-bottom: 12px;"><img data-aos="fade-up"
+                    src="assets/img/hackers.jpg" width="100%" style="border-radius: 50px;">
+            </div>
+            <div class="col-lg-7 mx-auto" style="padding-right: 0px;">
+                <div data-aos="fade-up" style="padding: 25px 45px; background-color: #222; border-radius: 50px;">
+                    <h2 style="color: #0de5a8;">About WinHacks</h2>
+                    <p class="text-white">
+                        Welcome to Windsor's annual hackathon that brings together innovators, creators, and
+                        problem-solvers
+                        from diverse backgrounds. Founded in 2019, WinHacks has been a beacon of collaboration,
+                        creativity, and technological advancement. <br>
+                        <br>Join us for an electrifying experience filled with workshops, mentorship sessions, and an
+                        opportunity to network with industry leaders. WinHacks welcomes all skill levels and
+                        backgrounds.
+                        <br>
+                        <br>Mark your calendars for a transformative weekend of innovation, camaraderie, and a chance to
+                        redefine what's possible at WinHacks 2025!
+                    </p>
+                    <!--
                 <p>In 2019, a small group of students began to plan the University of Windsors first ever hackathon, and the Windsor regions second MLH event. By March the next year, their ambitions had lead them further then they ever expected, overcoming
                     massive challenges to host one of the most successful tech events in #YQG. WinHacks 2020 laid the groundwork for digital hackathons worldwide by pivoting to an innovative virtual model in just two weeks. Challenges focused on mobility,
                     cybersecurity, new tech like blockchain, entrepreneurship, health, and more.<br></p>
                 <p>This years' event will feature similar themes, challenges, and goals, while once again breaking new ground for digital events. WinHacks 2021 isn't following the tried and true format - it's taking things a step further with pre-event
                     content, better networking and recruitment opportunities, a plan to support hackers after the event with strong project follow-through and a commitment to a better way to find the mold breakers of tomorrow.<br></p> -->
-            
-                    <a href="https://photos.app.goo.gl/82oYNTyFtJjPbD5v9"
-                       target="_blank"
-                       class="btn-link btn-lg days-one-regular"
-                       style="background-color: #0de5a8; color: black; padding: 15px 30px; font-size: 15px; border-radius: 8px; text-decoration: none; display: inline-block;"
-                       onmouseover="this.style.backgroundColor='#18ffb3';"
-                       onmouseout="this.style.backgroundColor='#0de5a8';"
-                    >
-                       Check out last year's photos!
+
+                    <a href="https://photos.app.goo.gl/82oYNTyFtJjPbD5v9" target="_blank"
+                        class="btn-link btn-lg days-one-regular"
+                        style="background-color: #0de5a8; color: black; padding: 15px 30px; font-size: 15px; border-radius: 8px; text-decoration: none; display: inline-block;"
+                        onmouseover="this.style.backgroundColor='#18ffb3';"
+                        onmouseout="this.style.backgroundColor='#0de5a8';">
+                        Check out last year's photos!
                     </a>
 
                 </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!--
+    <!--
 <div class="brands"></div>
 <div data-aos="fade-up" class="features-blue" style="background-color: rgba(0,0,0,0.51);background-image: url(&quot;assets/img/wp_dark.png&quot;);">
     <div class="container">
@@ -348,586 +570,478 @@
 </div>
 -->
 
-<section id="schedule" class="content-section text-center bg-black">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto" data-aos="fade-up">
-                <h1 style="color: #0de5a8;" class="mb-4">Schedule</h1>
+    <section id="schedule" class="content-section text-center bg-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                    <h1 style="color: #0de5a8;" class="mb-4">Schedule</h1>
+                </div>
             </div>
         </div>
-    </div>
-    <p class="text-white" style="margin-bottom:32px">Workshops and other events will be added soon!</p>
-    <div>
-        <style>
-            .test h4 {
-                padding: 0;
-                padding-bottom: 8px;
-                margin: 0;
-            }
+        <div>
+            <style>
+                .test h4 {
+                    padding: 0;
+                    padding-bottom: 8px;
+                    margin: 0;
+                }
 
-            .test p {
-                padding: 0;
-                margin: 0;
-            }
+                .test p {
+                    padding: 0;
+                    margin: 0;
+                }
 
-            .test {
-                padding: 2rem;
-                color: white;
-                text-align: center;
-                background-color: black;
-            }
+                .test {
+                    padding: 2rem;
+                    color: white;
+                    text-align: center;
+                    background-color: black;
+                }
 
-            .test:hover {
-                background-color: #222222;
-                transition: 300ms;
-            }
+                .test:hover {
+                    background-color: #222222;
+                    transition: 300ms;
+                }
 
-            .selected {
-                background-color: #0de5a8;
-                color: black;
-                transition: 500ms;
-            }
+                .selected {
+                    background-color: #0de5a8;
+                    color: black;
+                    transition: 500ms;
+                }
 
-            .selected:hover {
-                background-color: #0de5a8;
-                color: black;
-            }
+                .selected:hover {
+                    background-color: #0de5a8;
+                    color: black;
+                }
 
-            .hidden {
-                display: none;
-            }
+                .hidden {
+                    display: none;
+                }
 
-            .day {
-                text-align: left !important;
-                padding: 2rem;
-                /* background-color: #222222; */
-                color: white;
-                border-radius: 20px;
-            }
+                .day {
+                    text-align: left !important;
+                    padding: 2rem;
+                    /* background-color: #222222; */
+                    color: white;
+                    border-radius: 20px;
+                }
 
-            .schedt {
-                padding: 30px;
-            }
+                .schedt {
+                    padding: 15px;
+                }
 
-            .schedt p {
-                color: rgb(177, 177, 177);
-                padding-bottom: 0px;
-                margin-bottom: 0px;
-            }
+                .schedt p {
+                    color: rgb(177, 177, 177);
+                    padding-bottom: 0px;
+                    margin-bottom: 0px;
+                    font-size: 14px;
+                }
 
-            .schedt h5 {
-                font-weight: 200;
-                color: white;
-            }
+                .schedt h5 {
+                    font-weight: 200;
+                    color: white;
+                }
 
-            .days-container {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-        </style>
+                .days-container {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 20px;
+                }
+            </style>
 
-        <div class="container">
-            <div class="row buttons">
-                <div id="b1" class="col-md-6 test selected" onclick="select(1)">
-                    <h2>Day 1</h2>
-                    <p>Saturday, Feb 15</p>
-                </div>
-                <div id="b2" class="col-md-6 test" onclick="select(2)">
-                    <h2>Day 2</h2>
-                    <p>Sunday, Feb 16</p>
-                </div>
-                <!-- <div id="b3" class="col-md-6 test" onclick="select(3)">
+            <div class="container">
+                <div class="row buttons">
+                    <div id="b1" class="col-md-6 test selected" onclick="select(1)">
+                        <h2>Day 1</h2>
+                        <p>Saturday, Feb 15</p>
+                    </div>
+                    <div id="b2" class="col-md-6 test" onclick="select(2)">
+                        <h2>Day 2</h2>
+                        <p>Sunday, Feb 16</p>
+                    </div>
+                    <!-- <div id="b3" class="col-md-6 test" onclick="select(3)">
                     <h4>Day 3</h4>
                     <p>Sunday</p>
                 </div> -->
+                </div>
+                <br><br><br>
+                <div class="days-container">
+                    <div class="day" id="day1">
+                        <div class="schedt ceremony">
+                            <p>9:00 AM</p>
+                            <h2>Registration Opens</h2>
+                            <p>Coffee provided, sponsor booths open</p>
+                            <p>See footer for location</p>
+                        </div>
+                        <div class="schedt ceremony">
+                            <p>10:00 AM</p>
+                            <h2>Opening Ceremonies</h2>
+                            <p>Challenges revealed, keynote speech by <a
+                                    href="https://www.linkedin.com/in/jeremie-bornais/" target="_blank">Jeremie
+                                    Bornais</a></p>
+                        </div>
+                        <div class="schedt meal">
+                            <p>12:00 PM</p>
+                            <h2>Lunch</h2>
+                        </div>
+                        <div class="schedt workshop">
+                            <p>1:00 PM - 2:00 PM</p>
+                            <h2>Introduction to htmx</h2>
+                            <p>Speaker: <a href="https://www.linkedin.com/in/jeremie-bornais/" target="_blank">Jeremie
+                                    Bornais</a></p>
+                        </div>
+                        <div class="schedt workshop">
+                            <p>2:15 PM - 3:15 PM</p>
+                            <h2>Introduction to React & Tailwind</h2>
+                            <p>Speaker: <a href="https://www.linkedin.com/in/ali-almaamouri/" target="_blank">Ali
+                                    Al Maamouri</a></p>
+                        </div>
+                        <div class="schedt workshop">
+                            <p>3:30 PM - 4:30 PM</p>
+                            <h2>How to Be a Founder: The Hustle, the Heart, and the Hard Work Behind Success</h2>
+                            <p>Speaker: <a href="https://www.linkedin.com/in/sydmthomp/" target="_blank">Sydney
+                                    Thompson</a> from <a href="https://www.wetech-alliance.com/"
+                                    target="_blank">WeTech</a></p>
+                        </div>
+                        <div class="schedt workshop">
+                            <p>4:45 PM - 5:45 PM</p>
+                            <h2>Game Development: Write Doom in 1 Hour</h2>
+                            <p>Speaker: <a href="https://www.linkedin.com/in/borattob/" target="_blank">Bradley
+                                    Boratto</a></p>
+                        </div>
+                        <div class="schedt meal">
+                            <p>6:00 PM</p>
+                            <h2>Dinner</h2>
+                        </div>
+                        <div class="schedt ceremony">
+                            <p>8:00 PM</p>
+                            <h2>Doors Close</h2>
+                            <p>No overnight accommodations, sorry!</p>
+                        </div>
+                    </div>
+
+                    <div class="day hidden" id="day2">
+                        <div class="schedt ceremony">
+                            <p>8:00 AM</p>
+                            <h2>Doors Open</h2>
+                        </div>
+                        <div class="schedt meal">
+                            <p>8:00 AM</p>
+                            <h2>Breakfast</h2>
+                        </div>
+                        <div class="schedt meal">
+                            <p>12:00 PM</p>
+                            <h2>Lunch</h2>
+                        </div>
+                        <div class="schedt ceremony">
+                            <p>1:00 PM</p>
+                            <h2>Submission Deadline</h2>
+                            <p>Be sure to follow <a href="https://winhacks.ca/submission-terms"
+                                    target="_blank">Submission Terms</a>!</p>
+                        </div>
+                        <div class="schedt ceremony">
+                            <p>4:00 PM</p>
+                            <h2>Closing Ceremonies</h2>
+                        </div>
+                    </div>
+
+                    <div class="day hidden" id="day3">
+                        TBD
+                        <!--          <div class="schedt">-->
+                        <!--            <p>9:00 AM</p>-->
+                        <!--            <h2>Day 3 Opening Stream</h2>-->
+                        <!--          </div>-->
+                        <!--          -->
+                        <!--          <div class="schedt">-->
+                        <!--              <p>9:30 AM</p>-->
+                        <!--              <h2>Soft Submission Deadline</h2>-->
+                        <!--          </div>-->
+                        <!--          -->
+                        <!--          <div class="schedt">-->
+                        <!--            <p>10:30 AM</p>-->
+                        <!--            <h2>Hard Submission Deadline</h2>-->
+                        <!--          </div>-->
+
+                        <!--          <div class="schedt">-->
+                        <!--            <p>11:30 AM</p>-->
+                        <!--            <h2>Minecraft Server Exploration and Build Showcase</h2>-->
+                        <!--          </div>-->
+                        <!--          -->
+                        <!--          <div class="schedt">-->
+                        <!--            <p>3:00 PM</p>-->
+                        <!--            <h2>Awards and Closing Ceremonies</h2>-->
+                        <!--          </div>-->
+
+                    </div>
+                </div>
             </div>
-            <br><br><br>
-            <div class="days-container">
-                <div class="day" id="day1">
-                    <div class="schedt">
-                        <p>9:00 AM</p>
-                        <h2>Registration Opens</h2>
-                        <p>Coffee provided, sponsor booths open</p>
-                        <p>See footer for location</p>
-                    </div>
-                    <div class="schedt">
-                        <p>10:00 AM</p>
-                        <h2>Opening Ceremonies</h2>
-                        <p>Challenges revealed, keynote speech by <a href="https://www.linkedin.com/in/jeremie-bornais/" target="_blank">Jeremie Bornais</a></p>
-                    </div>
-                    <div class="schedt">
-                        <p>12:00 PM</p>
-                        <h2>Lunch</h2>    
-                    </div>
-                    <div class="schedt">
-                        <p>6:00 PM</p>
-                        <h2>Dinner</h2>
-                    </div>
-                    <div class="schedt">
-                        <p>8:00 PM</p>
-                        <h2>Doors Close</h2>
-                        <p>No overnight accommodations, sorry!</p>
-                    </div>
 
-                    <!-- <div class="schedt">
-                        <p>2:30 PM - 3:30 PM</p>
-                        <h2>"Build Your First Full Stack App With Flask"</h2> <h6>🐍 Jeremie Bornais, Software Engineer @ RIIS</h6>
-                    </div>
-                    <div class="schedt">
-                        <p>4:30 PM - 5:30 PM</p>
-                        <h2>"Ethics and AI: An Interactive Debate"</h2> <h6>🤖 Natalie George, Norma Nizam, Raya Mazhar, Faraan Rashid, Odette Debate</h6>
-                    </div>
-                    <div class="schedt">
-                        <p>6:00 PM</p>
-                        <h2>Dinner</h2>
-                    </div>
-                    <div class="schedt">
-                        <p>8:00 PM</p>
-                        <h2>Doors close</h2>
-                    </div> -->
-                </div>
+            <script>
+                var $id = function (id) {
+                    return document.getElementById(id)
+                };
 
-                <div class="day hidden" id="day2">
-                    <div class="schedt">
-                        <p>8:00 AM</p>
-                        <h2>Doors Open</h2>
-                        <p>Breakfast provided</p>
-                    </div>
-                    <div class="schedt">
-                        <p>12:00 PM</p>
-                        <h2>Lunch</h2>
-                    </div>
-                    <div class="schedt">
-                        <p>1:00 PM</p>
-                        <h2>Submission Deadline</h2>
-                        <p>Be sure to follow <a href="https://winhacks.ca/submission-terms" target="_blank">Submission Terms</a>!</p>
-                    </div>
-                    <div class="schedt">
-                        <p>4:00 PM</p>
-                        <h2>Closing Ceremonies</h2>
-                    </div>
-                </div>
-
-                <div class="day hidden" id="day3">
-                    TBD
-                    <!--          <div class="schedt">-->
-                    <!--            <p>9:00 AM</p>-->
-                    <!--            <h2>Day 3 Opening Stream</h2>-->
-                    <!--          </div>-->
-                    <!--          -->
-                    <!--          <div class="schedt">-->
-                    <!--              <p>9:30 AM</p>-->
-                    <!--              <h2>Soft Submission Deadline</h2>-->
-                    <!--          </div>-->
-                    <!--          -->
-                    <!--          <div class="schedt">-->
-                    <!--            <p>10:30 AM</p>-->
-                    <!--            <h2>Hard Submission Deadline</h2>-->
-                    <!--          </div>-->
-
-                    <!--          <div class="schedt">-->
-                    <!--            <p>11:30 AM</p>-->
-                    <!--            <h2>Minecraft Server Exploration and Build Showcase</h2>-->
-                    <!--          </div>-->
-                    <!--          -->
-                    <!--          <div class="schedt">-->
-                    <!--            <p>3:00 PM</p>-->
-                    <!--            <h2>Awards and Closing Ceremonies</h2>-->
-                    <!--          </div>-->
-
-                </div>
-            </div>
-        </div>
-
-        <script>
-            var $id = function (id) {
-                return document.getElementById(id)
-            };
-
-            function select(id) {
-                let b1 = $id('b1');
-                let b2 = $id('b2');
-                let day1 = $id('day1');
-                let day2 = $id('day2');
-                b1.classList.remove('selected');
-                b2.classList.remove('selected');
-                day1.classList.add('hidden');
-                day2.classList.add('hidden');
-                switch (id) {
-                    case 1:
-                        b1.classList.add('selected');
-                        day1.classList.remove('hidden');
-                        break;
-                    case 2:
-                        b2.classList.add('selected');
-                        day2.classList.remove('hidden');
-                        break;
+                function select(id) {
+                    let b1 = $id('b1');
+                    let b2 = $id('b2');
+                    let day1 = $id('day1');
+                    let day2 = $id('day2');
+                    b1.classList.remove('selected');
+                    b2.classList.remove('selected');
+                    day1.classList.add('hidden');
+                    day2.classList.add('hidden');
+                    switch (id) {
+                        case 1:
+                            b1.classList.add('selected');
+                            day1.classList.remove('hidden');
+                            break;
+                        case 2:
+                            b2.classList.add('selected');
+                            day2.classList.remove('hidden');
+                            break;
+                    }
                 }
-            }
-        </script>
+            </script>
 
-    </div>
-</section>
+        </div>
+    </section>
 
-<section id="prizes" class="content-section text-center bg-black" style="padding-top: 80px; padding-bottom: 80px;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto" data-aos="fade-up">
-                <h1 style="color: #0de5a8;" class="mb-4">Prizes</h1>
-                <p class="text-white">Compete and showcase your skills to claim these prizes! For more details, check out our <a href="https://winhacks.ca/prize-terms" target="_blank">Prize Terms</a>.</p>
-            </div>
-        </div>
-        <div class="prizes-container d-grid gap-4" style="grid-template-columns: repeat(2, 1fr);">
-            <div class="reward-card d-flex flex-column justify-content-center align-items-center bg-dark text-white p-4 shadow"
-                data-aos="fade-up" data-aos-delay="200" style="border-radius: 8px;">
-                <h3 class="text-center" style="color: #0de5a8;">🎯 Best in Each Category (4)</h3>
-                <h6 class="text-center text-secondary">Awarded to the best team in each of 4 categories (to be revealed at opening ceremonies)</h6>
-                <h2 class="text-center">$300 <span class="text-secondary">x 4</span></h2>
-            </div>
-            <div class="reward-card d-flex flex-column justify-content-center align-items-center bg-dark text-white p-4 shadow"
-                data-aos="fade-up" data-aos-delay="100" style="border-radius: 8px;">
-                <h3 class="text-center" style="color: #0de5a8;">🏆 Best Overall</h3>
-                <h6 class="text-center text-secondary">Awarded to the best team among the 4 "Best in Each Category" winners</h6>
-                <h2 class="text-center">$400</h2>
-            </div>
-            <div class="reward-card d-flex flex-column justify-content-center align-items-center bg-dark text-white p-4 shadow"
-                data-aos="fade-up" data-aos-delay="300" style="border-radius: 8px;">
-                <h3 class="text-center" style="color: #0de5a8;">🎨 Best User Experience</h3>
-                <h6 class="text-center text-secondary">Awarded to the team with the best user experience</h6>
-                <h2 class="text-center">$200</h2>
-            </div>
-            <div class="reward-card d-flex flex-column justify-content-center align-items-center bg-dark text-white p-4 shadow"
-                data-aos="fade-up" data-aos-delay="400" style="border-radius: 8px;">
-                <h3 class="text-center" style="color: #0de5a8;">🤖 Most Technically Outstanding</h3>
-                <h6 class="text-center text-secondary">Awarded to the team with the most impressive technical implementation</h6>
-                </h6>
-                <h2 class="text-center">$200</h2>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="faq" class="content-section text-center bg-black">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto" data-aos="fade-up">
-                <h2 style="color: #0de5a8;">Frequently Asked Questions</h2>
-                <p class = "text-white">Some common questions you may have about WinHacks, or hackathons in general<br></p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 mx-auto" style="padding-top: 75px;">
-                <div data-aos="fade-up" class="green_section">
-                    <h3>What is a Hackathon?</h3>
-                    <p class="text-left">To put it simply, hackathons combine the two words: hacking and marathon.
-                        Participants will get the chance to form teams of 1-4 members and bring a project idea to
-                        life! However, they only have 36 hours to accomplish this.
-                        Students will receive mentorship, learn about new job opportunities, and get some cool swag!<br>
-                    </p>
-                </div>
-                <div data-aos="fade-up" class="gray_section text-white">
-                    <h3 >Can I Work On My Hack Before the Event?</h3>
-                    <p class="text-left ">We follow the Major League Hacking guidelines, which prohibit students from
-                        bringing and continuing a project that they have already worked on. Your final project should be
-                        new and only built during the weekend of WinHacks.<br></p>
-                </div>
-            </div>
-            <div class="col-md-6 mx-auto">
-                <div data-aos="fade-up" class="gray_section text-white">
-                    <h3><strong>WHAT IF I'VE NEVER BEEN TO A HACKATHON BEFORE?</strong><br></h3>
-                    <p class="text-left">There's always a first time for everything, right? We highly encourage
-                        individuals with various levels of experience to apply to WinHacks. WinHacks is a hackathon
-                        where individuals from various disciplines, majors, and backgrounds
-                        are encouraged to come out and participate.<br></p>
-                </div>
-                <div data-aos="fade-up" class="green_section ">
-                    <h3>Who Can Participate?</h3>
-                    <p class="text-left">WinHacks applications are open to students from across the world. Whether you
-                        are a freshman or completing your PhD, we want you to apply! We will also be accepting high
-                        school students!<br></p>
-                </div>
-                <div data-aos="fade-up" class="gray_section text-white">
-                    <h3>Have More Questions?</h3>
-                    <p class="text-left">Reach out to us at&nbsp;<a style="color: #0de5a8;" href="mailto:support@winhacks.ca">support@winhacks.ca</a><br>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--<div data-aos="fade-up" id="sponsors" class="photo-gallery" style="padding-bottom: 60px;padding-top: 80px;">-->
-<!--    <div class="container">-->
-<!--        <div class="intro" style="max-width: 700px;">-->
-<!--            <h2 class="text-center">Interested in Sponsoring?</h2>-->
-<!--            <p class="text-center">If you or your company is interested in being prominently featured among the Future-->
-<!--                of Computer Science, contact us at&nbsp;<a href="mailto:partnerships@winhacks.ca">partnerships@winhacks.ca</a><br>-->
-<!--            </p>-->
-<!--            <p class="text-center" style="margin-top: 16px;"><a class="btn btn-primary btn-lg btn-default" role="button"-->
-<!--                                                                href="sponsorship.pdf">Learn More Here</a><br></p>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <h2 class="text-center">Our 2022 Sponsors</h2>-->
-<!--    <div class="container">-->
-<!--        <div class="row justify-content-center">-->
-<!--            <div class="col-md-8 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="http://choosewindsoressex.com/"><img src="assets/img/sponsors/weedc.png" width="100%"></a>-->
-<!--            </div>-->
-<!--            <div class="col-md-8 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://www.citywindsor.ca/Pages/Home.aspx"><img src="assets/img/sponsors/windsor.png"-->
-<!--                                                                           width="100%"></a></div>-->
-<!--            &lt;!&ndash;-->
-<!--            <div class="col-md-8 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a href="https://blog.oce-ontario.org/"><img src="assets/img/sponsors/oci.png" width="100%"></a></div>-->
-<!--            <div class="col-md-8 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a href="https://www.avinhub.ca/"><img src="assets/img/sponsors/avin.png" width="100%"></a></div>-->
-<!--            &ndash;&gt;-->
-<!--        </div>-->
-<!--        <div class="row justify-content-center">-->
-<!--            <div class="col-6 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://www.uwindsor.ca/"><img src="assets/img/sponsors/uwin.png" width="100%"></a></div>-->
-<!--            <div class="col-6 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://www.uwindsor.ca/science/computerscience/"><img src="assets/img/sponsors/compsci3.png"-->
-<!--                                                                                 width="100%"></a></div>-->
-<!--            <div class="col-6 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://www.workforcewindsoressex.com/companies/epicentre-university-of-windsor/"><img-->
-<!--                    src="assets/img/sponsors/epicentre.png" width="100%"></a></div>-->
-<!--            <div class="col-6 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://genesis.stclaircollege.ca/"><img src="assets/img/sponsors/stclair.png"-->
-<!--                                                                   width="100%"></a></div>-->
-<!--            <div class="col-6 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://www.wetech-alliance.com/"><img src="assets/img/sponsors/wetech.png" width="100%"></a>-->
-<!--            </div>-->
-<!--            <div class="col-6 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://blog.oce-ontario.org/"><img src="assets/img/sponsors/oci.png" width="100%"></a></div>-->
-<!--            <div class="col-6 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://www.avinhub.ca/"><img src="assets/img/sponsors/avin.png" width="100%"></a></div>-->
-<!--            &lt;!&ndash;-->
-<!--            <div class="col-6 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a href="https://www.wavedirect.net/"><img src="assets/img/sponsors/wavedirect2.png" width="100%"></a></div>-->
-<!--            <div class="col-6 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a href="https://www.blackberry.com/"><img src="assets/img/sponsors/blackberry.png" width="100%"></a></div>-->
-<!--            <div class="col-6 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a href="http://www.pepcorp.ca/"><img src="assets/img/sponsors/pepcorp2.png" width="100%"></a></div>-->
-<!--            <div class="col-6 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a href="https://www.rocketloans.com/"><img src="assets/img/sponsors/rocket2.png" width="100%"></a></div>-->
-<!--            <div class="col-6 text-nowrap mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a href="https://splicedigital.com/"><img src="assets/img/sponsors/splice.png" width="100%"></a></div>-->
-<!--            <div class="col-6 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a href="https://www.wesparkhealth.com/"><img src="assets/img/sponsors/wespark.png" width="100%"></a></div>-->
-<!--            <div class="col-6 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a href="https://www.womenofwindsor.org/"><img src="assets/img/sponsors/wow.png" width="100%"></a></div>-->
-<!--            &ndash;&gt;-->
-<!--        </div>-->
-<!--        <div class="row justify-content-center">-->
-<!--            <div class="col-4 col-sm-4 col-md-3 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://sites.google.com/view/gdscwindsor/home"><img src="assets/img/sponsors/dsc.png"-->
-<!--                                                                               width="100%"></a></div>-->
-<!--            <div class="col-4 col-sm-4 col-md-3 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://css.uwindsor.ca/"><img src="assets/img/sponsors/css.png" width="100%"></a></div>-->
-<!--            <div class="col-4 col-sm-4 col-md-3 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://www.wolfram.com/"><img src="assets/img/sponsors/wolfram.png" width="100%"></a></div>-->
-<!--            <div class="col-4 col-sm-4 col-md-3 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://1password.com/"><img src="assets/img/sponsors/1password-logo.png" width="100%"></a>-->
-<!--            </div>-->
-<!--            <div class="col-4 col-sm-4 col-md-3 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://www.sketch.com/"><img src="assets/img/sponsors/sketch.png" width="100%"></a></div>-->
-<!--            <div class="col-4 col-sm-4 col-md-3 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://www.interviewcake.com/"><img src="assets/img/sponsors/interview-cake.png"-->
-<!--                                                               width="100%"></a></div>-->
-<!--            <div class="col-4 col-sm-4 col-md-3 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://www.digitalocean.com/press/">-->
-<!--                <center><img src="assets/img/sponsors/digital_ocean.png" width="50%"></center>-->
-<!--            </a></div>-->
-<!--            <div class="col-4 col-sm-4 col-md-3 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://www.echo3d.co/brand"><img src="assets/img/sponsors/echo3D.png" width="100%"></a></div>-->
-<!--            <div class="col-4 col-sm-4 col-md-3 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://gdg.community.dev/gdg-windsor/"><img src="assets/img/sponsors/gdg.png"-->
-<!--                                                                       width="100%"></a></div>-->
-<!--            <div class="col-4 col-sm-4 col-md-3 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://www.axure.com/"><img src="assets/img/sponsors/axure.png" width="100%"></a></div>-->
-<!--            <div class="col-4 col-sm-4 col-md-3 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://balsamiq.com/"><img src="assets/img/sponsors/balsamiq.png" width="100%"></a></div>-->
-<!--            <div class="col-4 col-sm-4 col-md-3 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://www.voiceflow.com/"><img src="assets/img/sponsors/voiceflow.png" width="100%"></a>-->
-<!--            </div>-->
-<!--            <div class="col-4 col-sm-4 col-md-3 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://igda.org/"><img src="assets/img/sponsors/igda.png" width="100%"></a></div>-->
-<!--            <div class="col-4 col-sm-4 col-md-3 mx-auto mx-sm-auto mx-md-auto" data-aos="fade" data-aos-delay="50"><a-->
-<!--                    href="https://www.sunlife.ca/en/"><img src="assets/img/sponsors/sunlife.png" width="100%"></a></div>-->
-<!--</div></section>-->
-<!--    <section id="faq" class="content-section text-center">-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-<!--                <div class="col-lg-8 mx-auto" data-aos="fade-up">-->
-<!--                    <h2 style="color: #0de5a8;">Frequently Asked Questions</h2>-->
-<!--                    <p>Some common questions you may have about WinHacks, or hackathons in general<br></p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="row">-->
-<!--                <div class="col-md-6 mx-auto" style="padding-top: 75px;">-->
-<!--                    <div data-aos="fade-up" class="green_section">-->
-<!--                        <h3>What is a Hackathon?</h3>-->
-<!--                        <p class="text-left">To put it simply, hackathons combine the two words: hacking and marathon. Participants will get the chance to form teams of up to 1-4 members, and bring a project idea to life! However, they only have 36 hours to accomplish this.-->
-<!--                            Students will receive mentorship, learn about new job opportunities, and get some cool swag!<br></p>-->
-<!--                    </div>-->
-<!--                    <div data-aos="fade-up" class="gray_section">-->
-<!--                        <h3>Can I Work On My Hack Before the Event?</h3>-->
-<!--                        <p class="text-left">We follow the Major League Hacking guidelines, which prohibits students from bringing and continuing a project that they have already worked on. Your final project should be new and only built during the weekend of WinHacks.<br></p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-6 mx-auto">-->
-<!--                    <div data-aos="fade-up" class="gray_section">-->
-<!--                        <h3><strong>WHAT IF I'VE NEVER BEEN TO A HACKATHON BEFORE?</strong><br></h3>-->
-<!--                        <p class="text-left">There's always a first time for everything, right? We highly encourage individuals with various levels of experience to apply to WinHacks. WinHacks is a hackathon where individuals from various disciplines, majors, and backgrounds-->
-<!--                            are encouraged to come out and participate.<br></p>-->
-<!--                    </div>-->
-<!--                    <div data-aos="fade-up" class="green_section">-->
-<!--                        <h3>Who Can Participate?</h3>-->
-<!--                        <p class="text-left">WinHacks applications are open to students from across the world. Whether you are a freshman or completing your PhD, we want you to apply! We will also be accepting high school students!<br></p>-->
-<!--                    </div>-->
-<!--                    <div data-aos="fade-up" class="gray_section">-->
-<!--                        <h3>Have More Questions?</h3>-->
-<!--                        <p class="text-left">Reach out to us at&nbsp;<a href="mailto:support@winhacks.ca">support@winhacks.ca</a><br></p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-<div data-aos="fade-up" id="sponsors" class="photo-gallery" style="padding-bottom: 60px;padding-top: 80px;">
-    <div class="container">
-        <h2 class="text-center">Sponsors and Partners</h2>
-        <div class="container">
-            <div class="row justify-content-center align-items-center d-flex mx-auto" style="max-width:1080px;gap: 16px 32px">
-                <div class="col-auto" data-aos="fade" data-aos-delay="50">
-                    <a href="https://www.uwindsor.ca/science/">
-                        <img src="assets/img/sponsors/Faculty_Science.png" alt="Faculty of Science" style="width:min(250px, 40vw)">
-                    </a>
-                </div>
-                <div class="col-auto" data-aos="fade" data-aos-delay="50">
-                    <a href="https://rocketinnovationstudio.ca/">
-                        <img src="assets/img/sponsors/rocket2.png" alt="Rocket" style="width:min(250px, 40vw)">
-                    </a>
-                </div>
-                <div class="col-auto" data-aos="fade" data-aos-delay="50">
-                    <a href="https://www.uwindsor.ca/coop-workplace-partnerships/">
-                        <img src="assets/img/sponsors/Co-op.png" alt="Co-op" style="width:min(500px, 80vw)">
-                    </a>
-                </div>
-                <div class="col-auto" data-aos="fade" data-aos-delay="50">
-                    <a href="https://www.riis.com/">
-                        <img src="assets/img/sponsors/riis.png" alt="RIIS LLC" style="width:min(150px, 24vw)">
-                    </a>
-                </div>
-                <div class="col-auto" data-aos="fade" data-aos-delay="50">
-                    <a href="https://www.wetech-alliance.com/">
-                        <img src="assets/img/sponsors/wetech.png" alt="WeTech" style="width:min(250px, 40vw)">
-                    </a>
-                </div>
-                <div class="col-auto" data-aos="fade" data-aos-delay="50">
-                    <a href="https://www.telus.com/">
-                        <img src="assets/img/sponsors/telus.jpg" alt="Telus" style="width:min(250px, 40vw)">
-                    </a>
-                </div>
-                <div class="col-auto" data-aos="fade" data-aos-delay="50">
-                    <a href="https://www.eztrackr.app/">
-                        <img src="assets/img/sponsors/eztrackr.png" alt="Eztrackr" style="width:min(250px, 40vw)">
-                    </a>
-                </div>
-                <div class="col-auto" data-aos="fade" data-aos-delay="50">
-                    <a href="https://1password.com/">
-                        <img src="assets/img/sponsors/1password.png" alt="OnePassword" style="width:min(300px, 48vw)">
-                    </a>
-                </div>
-                <div class="col-auto" data-aos="fade" data-aos-delay="50">
-                    <a href="https://balsamiq.com/">
-                        <img src="assets/img/sponsors/balsamiq.png" alt="Balsamiq" style="width:min(250px, 40vw)">
-                    </a>
-                </div>
-                <div class="col-auto" data-aos="fade" data-aos-delay="50">
-                    <a href="https://www.oc-innovation.ca/">
-                        <img src="assets/img/sponsors/oci.png" alt="OCI" style="width:min(200px, 32vw)">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <h2 class="text-center" style="margin-top:64px;margin-bottom:16px">Organized by</h2>
-        <div class="row justify-content-center align-items-center d-flex mx-auto">
-            <div class="col-auto" data-aos="fade" data-aos-delay="50">
-                <a href="https://css.uwindsor.ca/">
-                    <img src="assets/img/sponsors/css.png" alt="CSS" style="width:min(350px, 56vw)">
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- <section id="contact" class="content-section text-center" style="padding-top: 100px;">
-    <div class="row align-items-center order-md-center" style="margin-right: 0;margin-left: 10%;">
-        <div class="col-lg-4 mx-auto" style="margin-top: 12px;margin-bottom: 12px;"><img data-aos="fade-up" src="assets/img/typing.png" width="100%" style="border-radius: 50px;"></div>
-        <div class="col-lg-8 mx-auto" style="padding-right: 0px;">
-            <div data-aos="fade-up" class="rounded_j" style="padding: 45px 45px;background-color: #222;">
-                <h2 style="color: #0de5a8;">Join Us Today</h2>
-                <p>Join our public Discord server to get all updates about WinHacks 2024 and attend our pre-event workshops!&nbsp;</p><a class="btn btn-primary btn-lg btn-default" role="button" href="http://discord.winhacks.ca">Join Us</a></div>
-        </div>
-    </div>
-    <div></div>
-</section> -->
-<div class="footer-dark" style="background-color: rgb(22,22,23);">
-    <footer>
+    <section id="prizes" class="content-section text-center bg-black" style="padding-top: 80px; padding-bottom: 80px;">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 col-md-3 item text">
-                    <h3 style="color: #0de5a8;">WinHacks 2025</h3>
-                    <p>Apply today for a chance to be a part of Windsor's major hackathon, and an experience to
-                        remember!<br></p>
-                </div>
-                <div class="col-sm-6 col-md-3 item">
-                    <h3 style="color: #0de5a8;">Location</h3>
-                    <ul>
-                        <li>
-                            <a href="https://maps.app.goo.gl/7TENNXranwseijqA6" target="_blank">
-                                Ed Lumley Centre for Engineering Innovation
-                                <br/>
-                                Main entrance (northwest corner)
-                                <br/>
-                                2285 Wyandotte St W
-                                <br/>
-                                Windsor, ON N9B 1K3
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-sm-6 col-md-3 item">
-                    <h3 style="color: #0de5a8;">Useful Links</h3>
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#schedule">Schedule</a></li>
-                        <li><a href="#sponsors">Sponsors</a></li>
-                        <li><a href="https://discord.winhacks.ca" target="_blank">Discord Server</a></li>
-                        <li><a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH Code of Conduct</a></li>
-                        <li><a href="#"></a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-6 col-md-3 item">
-                    <h3 style="color: #0de5a8;">Questions?</h3>
-                    <ul>
-                        <li><a href="mailto:support@winhacks.ca"><i class="fa fa-envelope"
-                                                                    style="margin-right: 8px;"></i>support@winhacks.ca</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col item social" data-aos="fade" style="margin-top: 24px;">
-                    <a href="https://twitter.com/WinHacksCA" target="_blank"><i class="icon ion-social-twitter"></i></a>
-                    <a href="http://facebook.com/WinHacksCA" target="_blank"><i class="icon ion-social-facebook"></i></a>
-                    <a href="https://www.linkedin.com/company/winhacks" target="_blank"><i class="icon ion-social-linkedin"></i></a>
-                    <a href="https://www.youtube.com/channel/UCMph1_SzSomH2cUF7j_YqUA" target="_blank"><i
-                            class="icon ion-social-youtube"></i></a>
-                    <a href="https://instagram.com/winhacksca" target="_blank"><i class="fab fa-instagram"></i></a>
+                <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                    <h1 style="color: #0de5a8;" class="mb-4">Prizes</h1>
+                    <p class="text-white">Compete and showcase your skills to claim these prizes! For more details,
+                        check out our <a href="https://winhacks.ca/prize-terms" target="_blank">Prize Terms</a>.</p>
                 </div>
             </div>
-            <p class="copyright">©WinHacks 2025</p>
+            <div class="prizes-container d-grid gap-4" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="reward-card d-flex flex-column justify-content-center align-items-center bg-dark text-white p-4 shadow"
+                    data-aos="fade-up" data-aos-delay="200" style="border-radius: 8px;">
+                    <h3 class="text-center" style="color: #0de5a8;">🎯 Best in Each Category (4)</h3>
+                    <h6 class="text-center text-secondary">Awarded to the best team in each of 4 categories (to be
+                        revealed at opening ceremonies)</h6>
+                    <h2 class="text-center">$300 <span class="text-secondary">x 4</span></h2>
+                </div>
+                <div class="reward-card d-flex flex-column justify-content-center align-items-center bg-dark text-white p-4 shadow"
+                    data-aos="fade-up" data-aos-delay="100" style="border-radius: 8px;">
+                    <h3 class="text-center" style="color: #0de5a8;">🏆 Best Overall</h3>
+                    <h6 class="text-center text-secondary">Awarded to the best team among the 4 "Best in Each Category"
+                        winners</h6>
+                    <h2 class="text-center">$400</h2>
+                </div>
+                <div class="reward-card d-flex flex-column justify-content-center align-items-center bg-dark text-white p-4 shadow"
+                    data-aos="fade-up" data-aos-delay="300" style="border-radius: 8px;">
+                    <h3 class="text-center" style="color: #0de5a8;">🎨 Best User Experience</h3>
+                    <h6 class="text-center text-secondary">Awarded to the team with the best user experience</h6>
+                    <h2 class="text-center">$200</h2>
+                </div>
+                <div class="reward-card d-flex flex-column justify-content-center align-items-center bg-dark text-white p-4 shadow"
+                    data-aos="fade-up" data-aos-delay="400" style="border-radius: 8px;">
+                    <h3 class="text-center" style="color: #0de5a8;">🤖 Most Technically Outstanding</h3>
+                    <h6 class="text-center text-secondary">Awarded to the team with the most impressive technical
+                        implementation</h6>
+                    </h6>
+                    <h2 class="text-center">$200</h2>
+                </div>
+            </div>
         </div>
-    </footer>
-</div>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-<script src="assets/js/grayscale.js"></script>
-<script src="assets/js/bs-animation.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+    </section>
+
+    <section id="faq" class="content-section text-center bg-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                    <h2 style="color: #0de5a8;">Frequently Asked Questions</h2>
+                    <p class="text-white">Some common questions you may have about WinHacks, or hackathons in
+                        general<br></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mx-auto" style="padding-top: 75px;">
+                    <div data-aos="fade-up" class="green_section">
+                        <h3>What is a Hackathon?</h3>
+                        <p class="text-left">To put it simply, hackathons combine the two words: hacking and marathon.
+                            Participants will get the chance to form teams of 1-4 members and bring a project idea to
+                            life! However, they only have 36 hours to accomplish this.
+                            Students will receive mentorship, learn about new job opportunities, and get some cool
+                            swag!<br>
+                        </p>
+                    </div>
+                    <div data-aos="fade-up" class="gray_section text-white">
+                        <h3>Can I Work On My Hack Before the Event?</h3>
+                        <p class="text-left ">We follow the Major League Hacking guidelines, which prohibit students
+                            from
+                            bringing and continuing a project that they have already worked on. Your final project
+                            should be
+                            new and only built during the weekend of WinHacks.<br></p>
+                    </div>
+                </div>
+                <div class="col-md-6 mx-auto">
+                    <div data-aos="fade-up" class="gray_section text-white">
+                        <h3><strong>WHAT IF I'VE NEVER BEEN TO A HACKATHON BEFORE?</strong><br></h3>
+                        <p class="text-left">There's always a first time for everything, right? We highly encourage
+                            individuals with various levels of experience to apply to WinHacks. WinHacks is a hackathon
+                            where individuals from various disciplines, majors, and backgrounds
+                            are encouraged to come out and participate.<br></p>
+                    </div>
+                    <div data-aos="fade-up" class="green_section ">
+                        <h3>Who Can Participate?</h3>
+                        <p class="text-left">WinHacks applications are open to students from across the world. Whether
+                            you
+                            are a freshman or completing your PhD, we want you to apply! We will also be accepting high
+                            school students!<br></p>
+                    </div>
+                    <div data-aos="fade-up" class="gray_section text-white">
+                        <h3>Have More Questions?</h3>
+                        <p class="text-left">Reach out to us at&nbsp;<a style="color: #0de5a8;"
+                                href="mailto:support@winhacks.ca">support@winhacks.ca</a><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div data-aos="fade-up" id="sponsors" class="photo-gallery" style="padding-bottom: 60px;padding-top: 80px;">
+        <div class="container">
+            <h2 class="text-center">Sponsors and Partners</h2>
+            <div class="container">
+                <div class="row justify-content-center align-items-center d-flex mx-auto"
+                    style="max-width:1080px;gap: 16px 32px">
+                    <div class="col-auto" data-aos="fade" data-aos-delay="50">
+                        <a href="https://www.uwindsor.ca/science/">
+                            <img src="assets/img/sponsors/Faculty_Science.png" alt="Faculty of Science"
+                                style="width:min(250px, 40vw)">
+                        </a>
+                    </div>
+                    <div class="col-auto" data-aos="fade" data-aos-delay="50">
+                        <a href="https://rocketinnovationstudio.ca/">
+                            <img src="assets/img/sponsors/rocket2.png" alt="Rocket" style="width:min(250px, 40vw)">
+                        </a>
+                    </div>
+                    <div class="col-auto" data-aos="fade" data-aos-delay="50">
+                        <a href="https://www.uwindsor.ca/coop-workplace-partnerships/">
+                            <img src="assets/img/sponsors/Co-op.png" alt="Co-op" style="width:min(500px, 80vw)">
+                        </a>
+                    </div>
+                    <div class="col-auto" data-aos="fade" data-aos-delay="50">
+                        <a href="https://www.riis.com/">
+                            <img src="assets/img/sponsors/riis.png" alt="RIIS LLC" style="width:min(150px, 24vw)">
+                        </a>
+                    </div>
+                    <div class="col-auto" data-aos="fade" data-aos-delay="50">
+                        <a href="https://www.wetech-alliance.com/">
+                            <img src="assets/img/sponsors/wetech.png" alt="WeTech" style="width:min(250px, 40vw)">
+                        </a>
+                    </div>
+                    <div class="col-auto" data-aos="fade" data-aos-delay="50">
+                        <a href="https://www.telus.com/">
+                            <img src="assets/img/sponsors/telus.jpg" alt="Telus" style="width:min(250px, 40vw)">
+                        </a>
+                    </div>
+                    <div class="col-auto" data-aos="fade" data-aos-delay="50">
+                        <a href="https://www.eztrackr.app/">
+                            <img src="assets/img/sponsors/eztrackr.png" alt="Eztrackr" style="width:min(250px, 40vw)">
+                        </a>
+                    </div>
+                    <div class="col-auto" data-aos="fade" data-aos-delay="50">
+                        <a href="https://1password.com/">
+                            <img src="assets/img/sponsors/1password.png" alt="OnePassword"
+                                style="width:min(300px, 48vw)">
+                        </a>
+                    </div>
+                    <div class="col-auto" data-aos="fade" data-aos-delay="50">
+                        <a href="https://balsamiq.com/">
+                            <img src="assets/img/sponsors/balsamiq.png" alt="Balsamiq" style="width:min(250px, 40vw)">
+                        </a>
+                    </div>
+                    <div class="col-auto" data-aos="fade" data-aos-delay="50">
+                        <a href="https://www.oc-innovation.ca/">
+                            <img src="assets/img/sponsors/oci.png" alt="OCI" style="width:min(200px, 32vw)">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <h2 class="text-center" style="margin-top:64px;margin-bottom:16px">Organized by</h2>
+            <div class="row justify-content-center align-items-center d-flex mx-auto">
+                <div class="col-auto" data-aos="fade" data-aos-delay="50">
+                    <a href="https://css.uwindsor.ca/">
+                        <img src="assets/img/sponsors/css.png" alt="CSS" style="width:min(350px, 56vw)">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-dark" style="background-color: rgb(22,22,23);">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item text">
+                        <h3 style="color: #0de5a8;">WinHacks 2025</h3>
+                        <p>Apply today for a chance to be a part of Windsor's major hackathon, and an experience to
+                            remember!<br></p>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3 style="color: #0de5a8;">Location</h3>
+                        <ul>
+                            <li>
+                                <a href="https://maps.app.goo.gl/7TENNXranwseijqA6" target="_blank">
+                                    Ed Lumley Centre for Engineering Innovation
+                                    <br />
+                                    Main entrance (northwest corner)
+                                    <br />
+                                    2285 Wyandotte St W
+                                    <br />
+                                    Windsor, ON N9B 1K3
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3 style="color: #0de5a8;">Useful Links</h3>
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#schedule">Schedule</a></li>
+                            <li><a href="#sponsors">Sponsors</a></li>
+                            <li><a href="https://discord.winhacks.ca" target="_blank">Discord Server</a></li>
+                            <li><a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH Code of
+                                    Conduct</a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3 style="color: #0de5a8;">Questions?</h3>
+                        <ul>
+                            <li><a href="mailto:support@winhacks.ca"><i class="fa fa-envelope"
+                                        style="margin-right: 8px;"></i>support@winhacks.ca</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col item social" data-aos="fade" style="margin-top: 24px;">
+                        <a href="https://twitter.com/WinHacksCA" target="_blank"><i
+                                class="icon ion-social-twitter"></i></a>
+                        <a href="http://facebook.com/WinHacksCA" target="_blank"><i
+                                class="icon ion-social-facebook"></i></a>
+                        <a href="https://www.linkedin.com/company/winhacks" target="_blank"><i
+                                class="icon ion-social-linkedin"></i></a>
+                        <a href="https://www.youtube.com/channel/UCMph1_SzSomH2cUF7j_YqUA" target="_blank"><i
+                                class="icon ion-social-youtube"></i></a>
+                        <a href="https://instagram.com/winhacksca" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <p class="copyright">©WinHacks 2025</p>
+            </div>
+        </footer>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/grayscale.js"></script>
+    <script src="assets/js/bs-animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
 </body>
 
 </html>
