@@ -1,4 +1,4 @@
-# WinHacks 2022 Terms and Conditions for Prizes
+# WinHacks 2025 Terms and Conditions for Prizes
 
 ### Currency
 Unless otherwise stated, all prizes are in **CAD (Canadian Dollars)**

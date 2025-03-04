@@ -334,9 +334,99 @@
                             <span class="greenText">WIN</span>HACKS 2025
                         </h1>
                         <h3 class="days-one-regular greenText" style="margin-top:8vh;">February 15 - 16</h3>
-                        
+                        <div>
+                            <style>
+                                a {
+                                    color: #0de5a8;
+                                }
+
+                                #timer {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    margin-top: 20px;
+                                }
+
+                                .time {
+                                    color: white;
+                                    text-align: center;
+                                    width: 70px;
+                                    margin-right: 15px;
+                                }
+
+                                .count {
+                                    height: 80px;
+                                    text-align: center;
+                                    width: 70px;
+                                    margin-right: 15px;
+                                    background: rgba(41, 107, 90, 0.8);
+                                    border-radius: 8px;
+                                    padding: 15px 30px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+
+                                .time small {
+                                    font-size: 12px;
+                                    text-transform: uppercase;
+                                    color: #e5e5e5;
+                                    margin-top: 5px;
+                                    background: none;
+                                }
+
+                                /* Mobile responsiveness */
+                                @media (max-width: 576px) {
+                                    h1 {
+                                        font-size: 32px;
+                                    }
+
+                                    h3 {
+                                        font-size: 20px;
+                                    }
+
+                                    .time {
+                                        width: 60px;
+                                        margin-right: 10px;
+                                    }
+
+                                    .count {
+                                        height: 70px;
+                                        width: 60px;
+                                        padding: 10px 20px;
+                                    }
+                                }
+                            </style>
+
+                            <div id="timer">
+                                <div class="time">
+                                    <h1 class="count" id="days">0</h1>
+                                    <small>DAYS</small>
+                                </div>
+
+                                <div class="time">
+                                    <h1 class="count" id="hours">0</h1>
+                                    <small>HOURS</small>
+                                </div>
+
+                                <div class="time">
+                                    <h1 class="count" id="minutes">0</h1>
+                                    <small>MINUTES</small>
+                                </div>
+                                <div class="time">
+                                    <h1 class="count" id="seconds">0</h1>
+                                    <small>SECONDS</small>
+                                </div>
+                            </div>
+                        </div>
                         <div style="margin-top: 2vh">
-                            
+                            <a href="https://maps.app.goo.gl/7TENNXranwseijqA6" target="_blank" class="hover-white"
+                                style="color: #e5e5e5; text-decoration: none;" onmouseover="this.style.color='white';"
+                                onmouseout="this.style.color='#e5e5e5';">
+                                <i class="fa fa-location-arrow" style="margin-right: 8px;"></i>
+                                Ed Lumley Centre for Engineering Innovation
+                            </a>
                         </div>
                         <p class="azeret-mono" style="padding-top: 8vh; max-width: 80vw; margin: 0 auto;">
                             CREATE, COMPETE, and CONQUER at the <span class="azeret-mono greenText">University of
@@ -360,19 +450,52 @@
             </div>
         </div>
 
-    
+
+        <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("Feb 15, 2025 09:00:00").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function () {
+
+                // Get today's date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24)));
+                var hours = Math.max(0, Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+                var minutes = Math.max(0, Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+                var seconds = Math.max(0, Math.floor((distance % (1000 * 60)) / 1000));
+
+                // pad with 0 if less than 10
+                days = days < 10 ? '0' + days : days;
+                hours = hours < 10 ? '0' + hours : hours;
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+
+                // Display the result in the elements
+                document.getElementById('days').innerText = days;
+                document.getElementById('hours').innerText = hours;
+                document.getElementById('minutes').innerText = minutes;
+                document.getElementById('seconds').innerText = seconds;
+
+                // If the count down is finished, write some text
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+        </script>
     </header>
 
 
     <section id="about" class="content-section text-center bg-black">
         <div class="row align-items-center" style="margin-right: 10%;margin-left: 10%;">
-            <div class="col-lg-5 mx-auto" style="margin-top: 12px;margin-bottom: 12px;">
-                
-                <img data-aos="fade-up"
-                    src="assets/img/hacker2025.jpg" width="100%"
-                    style="border-radius: 50px; object-fit: fill;"
-                    
-                    >
+            <div class="col-lg-5 mx-auto" style="margin-top: 12px;margin-bottom: 12px;"><img data-aos="fade-up"
+                    src="assets/img/hackers.jpg" width="100%" style="border-radius: 50px;">
             </div>
             <div class="col-lg-7 mx-auto" style="padding-right: 0px;">
                 <div data-aos="fade-up" style="padding: 25px 45px; background-color: #222; border-radius: 50px;">
@@ -396,20 +519,12 @@
                 <p>This years' event will feature similar themes, challenges, and goals, while once again breaking new ground for digital events. WinHacks 2021 isn't following the tried and true format - it's taking things a step further with pre-event
                     content, better networking and recruitment opportunities, a plan to support hackers after the event with strong project follow-through and a commitment to a better way to find the mold breakers of tomorrow.<br></p> -->
 
-                    <a href="https://photos.google.com/share/AF1QipMsv6r7xIVS_2v6QvGulP_YI6N9mgk6INj0AibowMCLx4w-viSct7-coTSHd8trRA?key=NjBUZ1J2S1VvV2llRlloY05Dd2NMVXF2cFRVczRR" target="_blank"
+                    <a href="https://photos.app.goo.gl/82oYNTyFtJjPbD5v9" target="_blank"
                         class="btn-link btn-lg days-one-regular"
-                        style="background-color: #0de5a8; color: black; padding: 15px 15px; font-size: 15px; border-radius: 8px; text-decoration: none; display: inline-block; margin-right: 10px;"
+                        style="background-color: #0de5a8; color: black; padding: 15px 30px; font-size: 15px; border-radius: 8px; text-decoration: none; display: inline-block;"
                         onmouseover="this.style.backgroundColor='#18ffb3';"
                         onmouseout="this.style.backgroundColor='#0de5a8';">
-                        Check out this year's photos!
-                    </a>
-
-                    <a href="https://winhacks-2025.devpost.com/project-gallery" target="_blank"
-                        class="btn-link btn-lg days-one-regular"
-                        style="background-color: #24bbf7cc; color: black; padding: 15px 15px; font-size: 15px; border-radius: 8px; text-decoration: none; display: inline-block; margin-left: 10px;"
-                        onmouseover="this.style.backgroundColor='#24bbf7f3';"
-                        onmouseout="this.style.backgroundColor='#24bbf7cc';">
-                        Check out this year's projects!
+                        Check out last year's photos!
                     </a>
 
                 </div>
@@ -693,7 +808,6 @@
         </div>
     </section>
 
-    <!--
     <section id="prizes" class="content-section text-center bg-black" style="padding-top: 80px; padding-bottom: 80px;">
         <div class="container">
             <div class="row">
@@ -735,7 +849,6 @@
             </div>
         </div>
     </section>
-    -->
 
     <section id="faq" class="content-section text-center bg-black">
         <div class="container">
